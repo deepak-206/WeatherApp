@@ -1,0 +1,14 @@
+{
+  "name": "weatherapp",
+  "version": "2.1.0",
+  "description": "Live weather dashboard with real-time updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
