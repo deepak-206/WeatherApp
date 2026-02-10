@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Weather Dashboard v2</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Live Weather Dashboard <span class="badge">v2</span></h1>
+        <p>Real-time weather with live location discovery by country, state, and city.</p>
+      </header>
+
+      <section class="controls">
+        <label>Country<input id="country" placeholder="e.g. United States" /></label>
+        <label>State / Province<input id="state" placeholder="e.g. California" /></label>
+        <label>City<input id="citySearch" placeholder="e.g. San Diego" /></label>
+        <button id="searchLocations">Search Locations</button>
+      </section>
+
+      <section class="card">
+        <h2>Available Locations</h2>
+        <p id="locationSource">Source: --</p>
+        <ul id="locations"></ul>
+      </section>
+
+      <section class="controls">
+        <label>Selected city label<input id="city" value="New York" maxlength="80" /></label>
+        <label>Latitude<input id="lat" type="number" step="0.0001" value="40.7128" /></label>
+        <label>Longitude<input id="lon" type="number" step="0.0001" value="-74.0060" /></label>
+        <label>Timezone<input id="timezone" value="America/New_York" maxlength="60" /></label>
+        <label class="check"><input id="demo" type="checkbox" /> Demo mode (simulated data)</label>
+        <button id="connect">Connect Live Feed</button>
+      </section>
+
+      <section class="status-row">
+        <div class="card">
+          <h2>Current Conditions</h2>
+          <p id="condition">Waiting for data…</p>
+          <p id="temp" class="metric">--°C</p>
+          <p id="details">Humidity: -- | Wind: --</p>
+          <p id="updated">Last update: --</p>
+        </div>
+        <div class="card">
+          <h2>Connection</h2>
+          <p id="connection">Disconnected</p>
+          <p id="source">Source: --</p>
+          <p id="warning" class="warning"></p>
+        </div>
+      </section>
+
+      <section class="card"><h2>Next 6 Hours</h2><ul id="hourly"></ul></section>
+      <section class="card"><h2>Recent Timeline</h2><ul id="history"></ul></section>
+    </main>
+
+    <script src="/app.js" defer></script>
+  </body>
+</html>
